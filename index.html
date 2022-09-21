@@ -1,122 +1,143 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ねます</title>
+    <link rel="icon" href="./favicon.ico" />
+    <meta property="og:title" content="ねます" />
+    <meta property="og:description" content="寝るときが夜" />
+    <meta
+      property="og:url"
+      content="https://addtobasic.github.io/oyasuminas-ai"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="twitter:card" content="summary" />
+    <meta
+      property="og:image"
+      content="https://addtobasic.github.io/oyasuminas-ai/ogp_image.png"
+    />
 
-<head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-J9HEJW28WD"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag("js", new Date());
+    <style>
+      body {
+        width: auto;
+        max-width: 600px;
+        margin: 0;
+        margin-right: auto;
+        margin-left: auto;
+        font-family: "Noto Sans JP", sans-serif;
+        text-align: center;
+      }
 
-		gtag("config", "G-J9HEJW28WD");
-	</script>
+      header {
+        font-size: 64px;
+        font-weight: 500;
+      }
 
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>おきました</title>
-	<link rel="icon" href="./favicon.ico">
-	<meta property="og:title" content="おきました" />
-	<meta property="og:description" content="起きたときが朝" />
-	<meta property="og:url" content="https://ohayougozaima.su" />
-	<meta property="og:type" content="website" />
-	<meta property="twitter:card" content="summary" />
-	<meta property="og:image" content="https://ohayougozaima.su/ogp_image.png" />
-	<style>
-		body {
-			width: auto;
-			max-width: 600px;
-			margin: 0;
-			margin-right: auto;
-			margin-left: auto;
-			font-family: "Noto Sans JP", sans-serif;
-			text-align: center;
-		}
+      main {
+        margin: 25px 0 0 0;
+      }
 
-		header {
-			font-size: 64px;
-			font-weight: 500;
-		}
+      footer {
+        margin: 50px 20px 0 0;
+        text-align: right;
+      }
 
-		main {
-			margin: 25px 0 0 0;
-		}
+      .shareButton {
+        font-size: 15px;
+        position: relative;
+        display: inline-block;
+        padding: 3px 15px;
+        transition: 0s;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        border-radius: 100vh;
+      }
 
-		footer {
-			margin: 50px 20px 0 0;
-			text-align: right;
-		}
+      .shareButton-twitter {
+        color: #fff;
+        background-color: #1d9bf0;
+      }
 
-		.shareButton {
-			font-size: 15px;
-			position: relative;
-			display: inline-block;
-			padding: 3px 15px;
-			transition: 0s;
-			text-align: center;
-			vertical-align: middle;
-			text-decoration: none;
-			border-radius: 100vh
-		}
+      .shareButton-twitter:hover {
+        color: #fff;
+        background: #0c7abf;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+  </head>
 
-		.shareButton-twitter {
-			color: #fff;
-			background-color: #1d9bf0;
-		}
+  <body>
+    <header id="oyasumi">おやすみなさい</header>
+    <main>
+      <div id="shareDescription">寝る↓</div>
+      <a href="share.html?type=twitter" class="shareButton shareButton-twitter">
+        <i class="fab fa-twitter"> </i>
+        ツイート
+      </a>
+      <script
+        async
+        src="https://platform.twitter.com/widgets.js"
+        charset="utf-8"
+      ></script>
+    </main>
+    <footer>
+      Created By
+      <a href="https://twitter.com/addtobasic" target="_blank" rel="noreferrer"
+        >@addtobasic</a
+      >
+      <div>
+        Refer to
+        <a href="https://ohayougozaima.su/" target="_blank" rel="noreferrer"
+          >ohayougozaima.su</a
+        >
+      </div>
+      <div>
+        source code:
+        <a
+          href="https://github.com/addtobasic/oyasuminas-ai"
+          target="_blank"
+          rel="noreferrer"
+          >GitHub</a
+        >
+      </div>
+    </footer>
+  </body>
+  <script>
+    function getParameterByName(name, url = window.location.href) {
+      name = name.replace(/[\[\]]/g, "\\$&");
+      const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return "";
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
 
-		.shareButton-twitter:hover {
-			color: #fff;
-			background: #0c7abf;
-		}
+    function getJSTDate(unix = -1) {
+      const jSTdate = unix < 0 ? new Date() : new Date(unix);
+      jSTdate.setHours(jSTdate.getHours() + 9);
+      return jSTdate;
+    }
 
-	</style>
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
-	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-</head>
-
-<body>
-	<header id="ohayo">おはようございます</header>
-	<main>
-		<div id="shareDescription">起きる↓</div>
-		<a href="share.html?type=twitter" class="shareButton shareButton-twitter">
-			<i class="fab fa-twitter"> </i>
-			ツイート
-		</a>
-	</main>
-	<footer>
-		Created By <a href="https://twitter.com/shadero_vrc">@shadero_vrc</a>
-	</footer>
-</body>
-<script>
-	function getParameterByName(name, url = window.location.href) {
-		name = name.replace(/[\[\]]/g, "\\$&");
-		const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-			results = regex.exec(url);
-		if (!results) return null;
-		if (!results[2]) return "";
-		return decodeURIComponent(results[2].replace(/\+/g, " "));
-	}
-
-	function getJSTDate(unix = -1) {
-		const jSTdate = unix < 0 ? new Date() : new Date(unix);
-		jSTdate.setHours(jSTdate.getHours() + 9);
-		return jSTdate;
-	}
-
-	const unix = getParameterByName("unix");
-	const jSTdate = getJSTDate(unix * 1000);
-	if (unix !== null && unix !== "" && !Number.isNaN(jSTdate.getTime())) {
-		document.getElementById("ohayo").innerText =
-			"午前" +
-			jSTdate.getUTCHours() +
-			"時" +
-			jSTdate.getUTCMinutes() +
-			"分起床\nおはようございます";
-		document.getElementById("shareDescription").innerText = "あなたも起きる↓";
-	}
-</script>
-
+    const unix = getParameterByName("unix");
+    const jSTdate = getJSTDate(unix * 1000);
+    if (unix !== null && unix !== "" && !Number.isNaN(jSTdate.getTime())) {
+      document.getElementById("oyasumi").innerText =
+        "午前" +
+        jSTdate.getUTCHours() +
+        "時" +
+        jSTdate.getUTCMinutes() +
+        "分起床\nおやすみなさい";
+      document.getElementById("shareDescription").innerText = "あなたも寝る↓";
+    }
+  </script>
 </html>
